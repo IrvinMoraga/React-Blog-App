@@ -1,0 +1,90 @@
+.sidebarContainer {
+  margin-right: 1rem;
+}
+
+.sidebar {
+  flex: 3;
+  margin: 1.875rem;
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+  background-color: #fdfbfb;
+  border-radius: 0.625rem;
+  display: flex;
+  max-width: 23.5625rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebarItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebarTitle {
+  margin: 0.9375rem;
+  padding: 0.65625rem;
+  width: 80%;
+  border-top: 0.09375rem solid #a7a4a4;
+  border-bottom: 0.09375rem solid #a7a4a4;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 1.125rem;
+  color: #222;
+  font-weight: 600;
+  line-height: 1.875rem;
+  text-align: center;
+}
+
+.sidebarText {
+  font-family: 'Lora', serif;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.sidebarItem > img {
+  margin-top: 0.9375rem;
+  height: 60%;
+  width: 60%;
+}
+
+.sidebarItem > p {
+  padding: 2.8125rem;
+}
+
+.sidebarList {
+  list-style: none;
+  margin-bottom: 2.8125rem;
+}
+
+.sidebarListItem {
+  display: inline-block;
+  width: 50%;
+  margin-top: 1rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sidebarSocial {
+  margin-top: 0.9375rem;
+  width: 15.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebarIcon {
+  font-size: 3rem;
+  margin-left: 0.9375rem;
+  margin-right: 0.9375rem;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1182px) {
+  .sidebarContainer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    margin-right: 0;
+  }
+}

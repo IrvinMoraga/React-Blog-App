@@ -1,0 +1,100 @@
+.register {
+  height: calc(100vh - 4.6875rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url('https://images.pexels.com/photos/317355/pexels-photo-317355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-size: cover;
+  transition: 0.5s;
+}
+
+.register-mobile {
+  margin-top: 16rem;
+  transition: 0.5s;
+}
+
+.registerTitle {
+  font-size: 4.6875rem;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.registerForm {
+  margin-top: 1.875rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.registerForm > label {
+  margin: 0.9375rem 0;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.5rem;
+}
+
+.registerInput {
+  padding: 0.9375rem;
+  background-color: white;
+  border: none;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 1.4rem;
+}
+
+.registerButton {
+  margin-top: 1.875rem;
+  background-color: rgb(0, 128, 128);
+  cursor: pointer;
+  border: none;
+  color: white;
+  border-radius: 0.9375rem;
+  padding: 0.9375rem;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.5rem;
+}
+
+.registerButton:disabled {
+  margin-top: 1.875rem;
+  background-color: rgba(0, 128, 128, 0.5);
+  cursor: default;
+  border: none;
+  color: white;
+  border-radius: 0.9375rem;
+  padding: 0.9375rem;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.5rem;
+}
+
+.registerLoginButton {
+  margin-top: 0.9375rem;
+  background-color: lightcoral;
+  cursor: pointer;
+  border: none;
+  padding: 0.9375rem;
+  border-radius: 0.9375rem;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.5rem;
+  width: 100%;
+  color: white;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 480px) {
+  .registerTitle {
+    font-size: 3.28125rem;
+  }
+
+  .registerForm > label {
+    font-size: 1.2rem;
+  }
+
+  .registerInput {
+    font-size: 1.12rem;
+  }
+
+  .register {
+    height: 53rem;
+  }
+}

@@ -1,0 +1,21 @@
+.posts {
+  flex: 9;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1.875rem;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1600px) {
+  .posts {
+    flex: 6;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .posts {
+    margin: 1rem auto;
+    width: 80%;
+    padding: 0 2rem;
+  }
+}

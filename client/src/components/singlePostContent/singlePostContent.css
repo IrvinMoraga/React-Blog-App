@@ -1,0 +1,244 @@
+.singlePostContent {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.singlePostContentWrapper {
+  margin-top: 3rem;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.singlePostContentImage {
+  width: 100%;
+  height: 18.75rem;
+  border-radius: 0.46875rem;
+  object-fit: cover;
+}
+
+.mainBody {
+  padding: 0 1.5rem;
+  max-width: 90%;
+}
+
+.singlePostContentTitle {
+  text-align: center;
+  margin: 0.9375rem;
+  font-family: 'Lora', serif;
+  font-size: 2.5rem;
+}
+
+.singlePostContentTitleInput {
+  text-align: center;
+  margin: 0.9375rem;
+  font-family: 'Lora', serif;
+  font-size: 2.5rem;
+  border: none;
+  color: gray;
+  border-bottom: 0.0625rem solid lightgray;
+}
+
+.singlePostContentTitleInput:focus {
+  outline: none;
+}
+
+.singlePostContentEdit {
+  text-align: right;
+  font-size: 2.25rem;
+  margin: 1rem 0;
+}
+
+.singlePostContentIcon {
+  margin-left: 0.9375rem;
+  cursor: pointer;
+}
+
+.singlePostContentIcon:first-child {
+  color: teal;
+}
+
+.singlePostContentIcon:last-child {
+  color: tomato;
+}
+
+.singlePostContentInfo {
+  margin-bottom: 1.875rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 1.5rem;
+  font-family: 'Varela', sans-serif;
+  color: #b39656;
+  line-height: 3rem;
+}
+
+.singlePostContentAuthor {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  max-width: 50rem;
+}
+
+.singlePostContentAuthorLink {
+  font-size: 1.5rem;
+  color: #b39656;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.singlePostContentDesc {
+  color: #666;
+  font-size: 1.6875rem;
+  line-height: 2.34375rem;
+  font-family: 'Varela Round', sans-serif;
+  text-align: justify;
+  white-space: pre;
+}
+
+.singlePostContentDescInput {
+  border: none;
+  border-bottom: 0.0625rem solid lightgray;
+  color: #666;
+  font-size: 1.6875rem;
+  line-height: 2.34375rem;
+  font-family: 'Varela Round', sans-serif;
+  text-align: justify;
+}
+
+.singlePostContentDescInput:focus {
+  outline: none;
+}
+
+.singlePostContentButton {
+  color: white;
+  background-color: teal;
+  padding: 0.9375rem;
+  border: none;
+  border-radius: 0.9375rem;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.5rem;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 3%;
+}
+
+.singlePostContentButton:disabled {
+  color: gray;
+  background-color: #f5f5f5;
+  padding: 0.9375rem;
+  border: none;
+  cursor: default;
+  border-radius: 0.9375rem;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 3%;
+}
+
+.updateErrorMessage {
+  color: red;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.5rem;
+  margin-top: 3rem;
+}
+
+@media only screen and (max-width: 950px) {
+  .singlePostContentWrapper {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .singlePostContentWrapper {
+    width: 85%;
+    margin-top: 2rem;
+  }
+
+  .singlePostContentAuthor {
+    margin-right: 3rem;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .singlePostContentWrapper {
+    width: 90%;
+  }
+
+  .singlePostContentEdit {
+    text-align: center;
+  }
+
+  .singlePostContentIcon {
+    margin: 0 1rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .singlePost {
+    margin-top: 0;
+  }
+
+  .singlePostContentWrapper {
+    margin: 0;
+    width: 100%;
+  }
+
+  .singlePostContentImage {
+    border-radius: 0;
+  }
+
+  .singlePostContentTitle,
+  .singlePostContentEdit,
+  .singlePostContentInfo,
+  .singlePostContentDesc {
+    padding: 0 2rem;
+  }
+
+  .singlePostContentTitle {
+    font-size: 2rem;
+  }
+
+  .singlePostContentEdit {
+    font-size: 2.025rem;
+  }
+
+  .singlePostContentInfo {
+    font-size: 1.2rem;
+  }
+
+  .singlePostContentAuthorLink {
+    font-size: 1.2rem;
+  }
+
+  .singlePostContentDesc {
+    font-size: 1.2rem;
+    text-align: left;
+  }
+
+  .singlePostContentDescInput {
+    max-width: 90%;
+    margin: 1rem 0;
+    margin-left: 1.3rem;
+    margin-right: 1.5rem;
+  }
+
+  .singlePostContentButton {
+    margin: 1rem 2rem;
+  }
+}

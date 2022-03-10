@@ -1,0 +1,23 @@
+.singlePostPage {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  transition: 0.5s;
+  padding-bottom: 10rem;
+}
+
+.mobileSinglePostPage {
+  margin-top: 25rem;
+  transition: 0.5s;
+}
+
+@media only screen and (max-width: 450px) {
+  .singlePostPage {
+    margin-top: 0;
+  }
+
+  .mobileSinglePostPage {
+    margin-top: 22.5rem;
+    transition: 0.5s;
+  }
+}

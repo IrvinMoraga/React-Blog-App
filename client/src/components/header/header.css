@@ -1,0 +1,54 @@
+.header {
+  margin-top: 5.625rem;
+  transition: 0.5s;
+}
+
+.header-mobile {
+  margin-top: 28rem;
+  transition: 0.5s;
+}
+
+.headerTitles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Lora', serif;
+  color: #444;
+}
+
+.headerTitleSm {
+  position: relative;
+  font-size: 1.875rem;
+}
+
+.headerTitleLg {
+  position: relative;
+  font-size: 9.375rem;
+}
+
+.headerImg {
+  width: 100%;
+  height: 42.1875rem;
+  margin-top: -6rem;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 683px) {
+  .headerTitleSm {
+    font-size: 1.8rem;
+  }
+
+  .headerTitleLg {
+    font-size: 4.5rem;
+  }
+
+  .headerImg {
+    height: 46rem;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .headerImg {
+    height: 30rem;
+  }
+}
