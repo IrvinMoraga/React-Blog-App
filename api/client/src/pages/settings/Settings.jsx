@@ -10,6 +10,7 @@ export default function Settings() {
   const [password, setPassword] = useState('');
   const [success, setSuccess] = useState(false);
   const [isDisabled, setIsDisabled] = useState(true);
+  const [showError, setShowError] = useState(false);
   const PF = 'http://localhost:5000/images/';
 
   const { user, dispatch, isMobile, setToDesktopMode } = useContext(Context);
@@ -54,6 +55,8 @@ export default function Settings() {
       window.alert('Successfully updated.');
     } catch (err) {
       dispatch({ type: 'UPDATE_FAILURE' });
+      setShowError(true);
+      setIsDisabled(true);
     }
   };
 
@@ -61,6 +64,12 @@ export default function Settings() {
     setToDesktopMode();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (username === '' || email === '') {
+      setIsDisabled(true);
+    }
+  }, [username, email]);
 
   let imgsrc;
 
@@ -104,6 +113,7 @@ export default function Settings() {
               setUsername(e.target.value);
               setSuccess(false);
               setIsDisabled(false);
+              setShowError(false);
             }}
           />
           <label>Email</label>
@@ -114,6 +124,7 @@ export default function Settings() {
               setEmail(e.target.value);
               setSuccess(false);
               setIsDisabled(false);
+              setShowError(false);
             }}
           />
           <label>Password</label>
@@ -134,6 +145,11 @@ export default function Settings() {
           </button>
           {success && (
             <span className='successMessage'>Profile has been updated...</span>
+          )}
+          {showError && (
+            <span className='errorMessage'>
+              Username or email is already taken.
+            </span>
           )}
         </form>
       </div>

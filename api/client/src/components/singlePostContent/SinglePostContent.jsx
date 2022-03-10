@@ -9,6 +9,7 @@ export default function SinglePostContent() {
   const location = useLocation();
   const path = location.pathname.split('/')[2];
   const [post, setPost] = useState({});
+  const [file, setFile] = useState(null);
   const [title, setTitle] = useState('');
   const [desc, setDesc] = useState('');
   const [date, setDate] = useState('');
@@ -41,13 +42,25 @@ export default function SinglePostContent() {
   };
 
   const handleUpdate = async () => {
+    const updatedPost = {
+      username: user.username,
+      title: title.trim(),
+      desc: desc.trim(),
+    };
+    if (file) {
+      const data = new FormData();
+      const filename = Date.now() + file.name;
+      data.append('name', filename);
+      data.append('file', file);
+      updatedPost.photo = filename;
+      try {
+        await axios.post('/upload', data);
+      } catch (err) {}
+    }
     try {
-      await axios.put(`/posts/${post._id}`, {
-        username: user.username,
-        title: title.trim(),
-        desc: desc.trim(),
-      });
+      await axios.put(`/posts/${post._id}`, updatedPost);
       setUpdateMode(false);
+      window.alert('Successfully edited post.');
       window.location.replace(`/post/${post._id}`);
     } catch (err) {}
   };
@@ -69,19 +82,43 @@ export default function SinglePostContent() {
     }
   }, [updateMode, title, desc]);
 
+  let imageSrc;
+
+  if (file) {
+    imageSrc = URL.createObjectURL(file);
+  } else if (updateMode) {
+    imageSrc = 'https://i.ibb.co/LgRfHv0/New-Post-2.png';
+  } else if (post.photo) {
+    imageSrc = PF + post.photo;
+  } else {
+    imageSrc = 'https://i.ibb.co/gTGk2XF/New-Post-1.png';
+  }
+
   return (
     <div className='singlePostContent'>
       <div className='singlePostContentWrapper'>
-        {post.photo ? (
-          <img
-            className='singlePostContentImage'
-            src={PF + post.photo}
-            alt='imagePlaceholder'
-          />
+        {updateMode ? (
+          <div className='imageUpload'>
+            <input
+              type='file'
+              id='fileInput'
+              style={{ display: 'none' }}
+              onChange={(e) => {
+                setFile(e.target.files[0]);
+              }}
+            />
+            <label htmlFor='fileInput'>
+              <img
+                className='singlePostContentImage singlePostContentUploadImage'
+                src={imageSrc}
+                alt='imageUploadPlaceholder'
+              />
+            </label>
+          </div>
         ) : (
           <img
             className='singlePostContentImage'
-            src='https://i.ibb.co/gTGk2XF/New-Post-1.png'
+            src={imageSrc}
             alt='imagePlaceholder'
           />
         )}

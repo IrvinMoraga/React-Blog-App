@@ -44,6 +44,7 @@ export default function Write() {
     }
     try {
       const res = await axios.post('/posts', newPost);
+      window.alert('Post published.');
       window.location.replace('/post/' + res.data._id);
     } catch (err) {}
   };
@@ -56,9 +57,9 @@ export default function Write() {
   return (
     <div className={isMobile ? 'write-mobile write' : 'write'}>
       <form className='writeForm' onSubmit={handleSubmit}>
-      {file && (
-        <img className='writeImg' src={URL.createObjectURL(file)} alt='' />
-      )}
+        {file && (
+          <img className='writeImg' src={URL.createObjectURL(file)} alt='' />
+        )}
         <div className='writeFormGroup'>
           <label htmlFor='fileInput'>
             <i class='writeIcon fa-solid fa-camera'></i>

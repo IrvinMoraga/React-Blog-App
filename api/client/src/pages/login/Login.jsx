@@ -22,6 +22,7 @@ export default function Login() {
       });
       dispatch({ type: 'LOGIN_SUCCESS', payload: res.data });
       setIsDisabled(true);
+      window.alert('User successfully logged in.');
     } catch (err) {
       dispatch({ type: 'LOGIN_FAILURE' });
       setError(true);

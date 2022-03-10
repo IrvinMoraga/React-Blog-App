@@ -13,7 +13,7 @@
 
 .writeImg {
   width: 100%;
-  height: 23.4375rem;
+  height: 40rem;
   border-radius: 0.9375rem;
   object-fit: cover;
 }
@@ -60,7 +60,7 @@
 
 .writeText {
   font-size: 1.875rem;
-  height: 5vh;
+  height: 30vh;
 }
 
 .writeSubmit {
@@ -111,16 +111,30 @@
   margin-top: 3rem;
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 1200px) {
+  .writeImg {
+    height: 30rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .writeImg {
+    height: 20rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .writeImg {
+    height: 15rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
   .writeInput {
     font-size: 1.6875rem;
   }
 
   .writeText {
     font-size: 1.125rem;
-  }
-
-  .writeImg {
-    height: 11.71875rem;
   }
 }
